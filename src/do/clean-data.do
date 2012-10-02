@@ -7,8 +7,6 @@ global outdir "~/Dropbox/Public"
 global tempdir "/tmp"
 
 cd $basedir
-rm $tempdir/class-a.dta
-
 
 *** 2004
 *** CLASS A
@@ -59,13 +57,16 @@ renames vi_mfr_cd - esx_add_df_qty \ `varlist'
 gen model_year = 2009
 save $tempdir/class-b, replace
 append using $tempdir/class-a
+replace ulife = "" if ulife == "N/A"
+destring ulife, replace
 save $tempdir/class-ab, replace
 
 *** 2010
-*** CLASS III
+*** CLASS C
 
 insheet using "data/raw/10actrr.csv", comma clear
 drop v??
+replace model_year = "2010"
 
 * strange observation, all screwed up
 drop if cert_level == "F" 
@@ -80,24 +81,75 @@ destring react_factor, replace
 save $tempdir/class-c, replace
 
 *** 2011
-*** CLASS III
+*** CLASS C
 
 insheet using "data/raw/11actrr.csv", comma clear
-append using $tempdir/temp
+replace model_year = "2011"
+append using $tempdir/class-c
 save $tempdir/class-c, replace
 
 *** 2012
-*** CLASS III
+*** CLASS C
 
 insheet using "data/raw/12actrr.csv", comma clear
-append using $tempdir/temp
+replace model_year = "2012"
+append using $tempdir/class-c
 save $tempdir/class-c, replace
 
 *** 2013
-*** CLASS III
+*** CLASS C
 
 insheet using "data/raw/13actrr.csv", comma clear
-append using $tempdir/temp
+replace model_year = "2013"
+append using $tempdir/class-c
 
+*** fix class C 
+
+use $tempdir/class-c, clear
+destring model_year, replace
+rename cert_mfr_nm mfrname
+rename targetcoefalbf targetcoeffa
+rename targetcoefblbfmph targetcoeffb
+rename targetcoefclbfmph2 targetcoeffc
+rename setcoefalbf setcoeffa
+rename setcoefblbfmph setcoeffb
+rename setcoefclbfmph2 setcoeffc
+rename displacement displ
+rename mult_df multdf
+rename add_df adddf
+rename useful_life_miles ulife
+rename test_proc testprc
+rename emission_name emission
+rename cert_level certlevel
+rename emission_standard standard
+rename cert_region salesarea
+rename standard_lvl tier
+rename test_proc_desc tstprocdesc
+rename test_fuel fueltyp
+rename certified_testgroup enginefamily
+rename certified_evap_family evapfamily
+
+drop *_desc
+
+append using $tempdir/class-ab
 compress
 save $outdir/compiled.dta, replace
+
+
+rm $tempdir/class-a.dta
+rm $tempdir/class-b.dta
+rm $tempdir/class-ab.dta
+rm $tempdir/class-c.dta
+
+
+
+
+
+
+
+
+
+
+
+
+
