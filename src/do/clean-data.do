@@ -3,9 +3,14 @@ set mem 500m
 set more off
 
 global basedir "~/Dropbox/github/danhammer/epa-emissions"
+global outdir "~/Dropbox/Public"
 global tempdir "/tmp"
 
 cd $basedir
+
+*** 2009
+
+insheet using "data/raw/09actrr.csv", comma clear
 
 *** 2010
 
@@ -42,4 +47,4 @@ insheet using "data/raw/13actrr.csv", comma clear
 append using $tempdir/temp
 
 compress
-save $basedir/data/compiled.dta, replace
+save $outdir/compiled.dta, replace
