@@ -1,0 +1,20 @@
+ls
+desc
+insheet using "data/raw/06actrr.csv", comma clear
+ls
+desc
+ls
+ls data
+ls data/raw
+insheet using "data/raw/09actrr.csv", comma clear
+desc
+append using temp
+desc
+destring replacement, replace
+destring displacement, replace
+dount if displacement == ""
+count if displacement == ""
+list displacement in 1/100
+list displacement in 1/1000
+ sort displacement
+list displacement in 1/1000
