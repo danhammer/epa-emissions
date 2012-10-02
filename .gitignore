@@ -1,4 +1,5 @@
-.DS_Store
+*.Statahistory
+*.DS_Store
 *.aux
 *.bbl
 *.blg
