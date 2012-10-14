@@ -143,7 +143,24 @@ rm $tempdir/class-c.dta
 
 
 
+* emissions of differnt vehicles of nox and different polutions
+* hybrid, diesel, 
 
+* by car, wide form, total emissions -- hybrid
+
+* at what part of the country, should you buy diesel, hybrid,
+
+* metric for should is cost.  mendelsohn.  
+
+* what do the rnd* variable mean? cert_level and standard?  what does the id mean?  testprc?
+* what different tests are there for testprc?  tab testprc?
+* fuel type, vehicle class, -- what does vehicle class mean?
+* ulife
+* emission
+* rnd emission
+
+
+* vars of interest: year model curbweight idvariable hybrid fueltype 
 
 
 
