@@ -8,45 +8,6 @@ global tempdir "/tmp"
 
 cd $basedir
 
-*** 2004
-*** CLASS A
-
-insheet using "data/raw/04actrr.txt", clear
-gen model_year = 2004
-save $tempdir/class-a, replace
-
-*** 2005
-*** CLASS A
-
-insheet using "data/raw/05actrr.txt", clear
-gen model_year = 2005
-append using $tempdir/class-a
-save $tempdir/class-a, replace
-
-*** 2006
-*** CLASS A
-
-insheet using "data/raw/06actrr.csv", comma clear
-gen model_year = 2006
-append using $tempdir/class-a
-save $tempdir/class-a, replace
-
-*** 2007
-*** CLASS A
-
-insheet using "data/raw/07actrr.txt", clear
-gen model_year = 2007
-append using $tempdir/class-a
-save $tempdir/class-a, replace
-
-*** 2008
-*** CLASS A
-
-insheet using "data/raw/08actrr.txt", clear
-gen model_year = 2008
-append using $tempdir/class-a
-save $tempdir/class-a, replace
-
 *** 2009
 *** CLASS B
 
@@ -56,10 +17,9 @@ insheet using "data/raw/09actrr.csv", comma clear
 renames vi_mfr_cd - esx_add_df_qty \ `varlist'
 gen model_year = 2009
 save $tempdir/class-b, replace
-append using $tempdir/class-a
 replace ulife = "" if ulife == "N/A"
 destring ulife, replace
-save $tempdir/class-ab, replace
+save $tempdir/class-b, replace
 
 *** 2010
 *** CLASS C
@@ -131,14 +91,10 @@ rename certified_evap_family evapfamily
 
 drop *_desc
 
-append using $tempdir/class-ab
-compress
+append using $tempdir/class-b
 save $outdir/compiled.dta, replace
 
-
-rm $tempdir/class-a.dta
 rm $tempdir/class-b.dta
-rm $tempdir/class-ab.dta
 rm $tempdir/class-c.dta
 
 

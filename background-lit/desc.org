@@ -1,0 +1,64 @@
+#+AUTHOR:     
+#+TITLE:      
+#+OPTIONS:     toc:nil num:nil 
+#+LATEX_HEADER: \usepackage{mathrsfs}
+#+LATEX_HEADER: \usepackage{graphicx}
+#+LATEX_HEADER: \usepackage{amstex}
+#+LATEX_HEADER: \usepackage{booktabs}
+#+LATEX_HEADER: \usepackage{dcolumn}
+#+LATEX_HEADER: \usepackage{subfigure}
+#+LATEX_HEADER: \usepackage[margin=1in]{geometry}
+#+LATEX_HEADER: \RequirePackage{fancyvrb}
+#+LATEX_HEADER: \DefineVerbatimEnvironment{verbatim}{Verbatim}{fontsize=\small,formatcom = {\color[rgb]{0.1,0.2,0.9}}}
+#+LATEX: \setlength{\parindent}{0in}
+#+LATEX: \renewcommand{\X}{{\bf X}}
+#+LATEX: \renewcommand{\uab}{\bar{U}_A}
+#+LATEX: \renewcommand{\ubb}{\bar{U}_B}
+#+LATEX: \renewcommand{\xao}{X_{A1}}
+#+LATEX: \renewcommand{\xat}{X_{A2}}
+#+LATEX: \renewcommand{\xbo}{X_{B1}}
+#+LATEX: \renewcommand{\xbt}{X_{B2}}
+#+LATEX: \renewcommand{\L}{\mathscr{L}}
+#+LATEX: \renewcommand{\st}{\hspace{8pt} \mbox{s.t.} \hspace{6pt}}
+#+LATEX: \renewcommand{\y}{{\bf y}}
+#+STARTUP: fninline
+
+*EPA light-duty vehicle emission description* \hfill
+Dan Hammer \\ \\
+
+* Emissions standards (and useful life)
+
+The following description taken from [[http://www.dieselnet.com/standards/us/ld_t2.php][this site]]. \\
+
+The Tier 2 emission standards are structured into 8 permanent and 3
+temporary certification levels of different stringency, called
+“certification bins”, and an average fleet standard for NOx
+emissions. Vehicle manufacturers have a choice to certify particular
+vehicles to any of the available bins. When fully implemented in 2009,
+the average NOx emissions of the entire light-duty vehicle fleet sold
+by each manufacturer has to meet the average NOx standard of 0.07
+g/mi. The temporary certification bins (bin 9, 10, and an MDPV bin 11)
+with more relaxed emission limits are available in the phase-in period
+and expire after the 2008 model year.\\
+
+Tier 2 vehicles are those meeting the requirements of one of the
+available bins and that are used to meet the requirement that a
+percentage of the fleet have average NOx emissions of 0.07
+g/mile. During the phase-in period, the rest of the fleet not used to
+comply with the 0.07 g/mile NOx average are referred to as interim
+non-Tier 2 vehicles. They must still meet the requirements of one of
+the available bins but have more relaxed fleet average requirements.\\
+
+The emission standards for all pollutants (certification bins) when
+tested on the Federal Test Procedure (FTP) are shown in Table 2. Where
+intermediate useful life exhaust emission standards are applicable,
+such standards are applicable for five years or 50,000 miles,
+whichever occurs first. The vehicle “full useful life” period for LDVs
+and light LDTs has been extended to 120,000 miles or ten years
+whichever occurs first. For heavy LDTs and MDPVs, it is 11 years or
+120,000 miles whichever occurs first. Manufacturers may elect to
+optionally certify to the Tier 2 exhaust emission standards for
+150,000 miles to gain NOx credits or to opt out of intermediate life
+standards. In such cases, useful life is 15 years or 150,000 miles,
+whichever occurs first. For interim non-Tier 2 LDV/LLDTs, the useful
+life is 10 years or 100,000 miles, whichever occurs first.\\
